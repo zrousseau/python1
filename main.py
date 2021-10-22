@@ -1,8 +1,8 @@
-import datetime
+from statistics import mean as MEAN
 
 
-def today():
-    print('It is', datetime.date.today())
+def findMean():
+    print(MEAN([1, 2, 3, 4, 5, 6, 7]))
 
 
 def ask_name():
@@ -183,7 +183,7 @@ if __name__ == '__main__':
     #        display_board(grid)
     #        print('The computer has won.')
     #        break
-    today()
+    findMean()
 
 
 
