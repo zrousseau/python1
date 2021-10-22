@@ -1,7 +1,9 @@
-# This is a sample Python script.
+import datetime
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+
+def today():
+    print('It is', datetime.date.today())
+
 
 def ask_name():
     # ask user for name
@@ -161,26 +163,27 @@ if __name__ == '__main__':
     # else:
     #    print("Sorry that is not an option...")
     # Tic Tac Continued
-    grid = [[1, 2, 3, ],
-            [4, 'X', 6],
-            [7, 8, 9]]
-    free_squares = []
-    while(True):
-        make_list_of_free_fields(grid)
-        if (len(free_squares) == 0):
-            display_board(grid)
-            print("The game is a draw")
-            break
-        display_board(grid)
-        enter_move(grid)
-        if(victory_for(grid, 'O')):
-            print('You have won!')
-            break
-        draw_move(grid)
-        if(victory_for(grid, 'X')):
-            display_board(grid)
-            print('The computer has won.')
-            break
+    # grid = [[1, 2, 3, ],
+    #        [4, 'X', 6],
+    #        [7, 8, 9]]
+    # free_squares = []
+    # while(True):
+    #    make_list_of_free_fields(grid)
+    #    if (len(free_squares) == 0):
+    #        display_board(grid)
+    #        print("The game is a draw")
+    #        break
+    #    display_board(grid)
+    #    enter_move(grid)
+    #    if(victory_for(grid, 'O')):
+    #       print('You have won!')
+    #        break
+    #    draw_move(grid)
+    #    if(victory_for(grid, 'X')):
+    #        display_board(grid)
+    #        print('The computer has won.')
+    #        break
+    today()
 
 
 
