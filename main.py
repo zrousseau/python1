@@ -1,15 +1,16 @@
-def pigLatin(string):
+def word_per_line(string):
     splitted = string.split()
-    latin = ""
     for i in splitted:
-        if(i.startswith("a") or i.startswith("e") or i.startswith("i") or i.startswith("o") or i.startswith("u")):
-            latin = latin + i + "yay "
-        elif(i[1:2] == 'a' or i[1:2] == 'e' or i[1:2] == 'i' or i[1:2] == 'o' or i[1:2] == 'u' or i[1:2] == 'y'):
-            latin = latin + i[1:] + i[:1] + "ay "
-        else:
-            latin  = latin + i[2:] + i[:2] + "ay "
+        print(i)
 
-    return latin
+
+def word_per_line2(string):
+    for i in range(len(string)):
+        if(string[i:i+1] == " "):
+            print(string[i:i+1])
+        else:
+            print(string[i:i+1], end="")
+
 
 def ask_name():
     # ask user for name
@@ -189,8 +190,8 @@ if __name__ == '__main__':
     #        display_board(grid)
     #        print('The computer has won.')
     #        break
-    phrase = input("What would you like to translate into pig latin?")
-    print(pigLatin(phrase))
+    phrase = input("What phrase would you like to print")
+    word_per_line2(phrase)
 
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
