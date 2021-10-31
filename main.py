@@ -1,3 +1,16 @@
+def pigLatin(string):
+    splitted = string.split()
+    latin = ""
+    for i in splitted:
+        if(i.startswith("a") or i.startswith("e") or i.startswith("i") or i.startswith("o") or i.startswith("u")):
+            latin = latin + i + "yay "
+        elif(i[1:2] == 'a' or i[1:2] == 'e' or i[1:2] == 'i' or i[1:2] == 'o' or i[1:2] == 'u' or i[1:2] == 'y'):
+            latin = latin + i[1:] + i[:1] + "ay "
+        else:
+            latin  = latin + i[2:] + i[:2] + "ay "
+
+    return latin
+
 def ask_name():
     # ask user for name
     name = input("what is your name\n>")
@@ -84,8 +97,8 @@ def enter_move(board):
             continue
         for i in range(3):
             for j in range(3):
-                if(move == board[i][j]):
-                    grid[i][j] = 'O'
+                # if(move == board[i][j]):
+                    # grid[i][j] = 'O'
                     return board
         print("That is not a free move")
         continue
@@ -97,12 +110,12 @@ def make_list_of_free_fields(board):
     # The function browses the board and builds a list of all the free squares;
     # the list consists of tuples, while each tuple is a pair of row and column numbers.
     print("Making list")
-    free_squares.clear()
-    for i in range(3):
-        for j in range(3):
-            if(board[i][j] != 'O' and board[i][j] != 'X'):
-                free_squares.append(tuple((i,j)))
-    return free_squares
+    # free_squares.clear()
+    # for i in range(3):
+        # for j in range(3):
+            # if(board[i][j] != 'O' and board[i][j] != 'X'):
+                # free_squares.append(tuple((i,j)))
+    # return free_squares
 
 
 def victory_for(board, sign):
@@ -136,7 +149,7 @@ def draw_move(board):
         for i in range(3):
             for j in range(3):
                 if (move == board[i][j]):
-                    grid[i][j] = 'X'
+                    # grid[i][j] = 'X'
                     return board
         continue
 
@@ -176,7 +189,8 @@ if __name__ == '__main__':
     #        display_board(grid)
     #        print('The computer has won.')
     #        break
-
+    phrase = input("What would you like to translate into pig latin?")
+    print(pigLatin(phrase))
 
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
