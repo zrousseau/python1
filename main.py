@@ -1,8 +1,20 @@
 from statistics import mean as MEAN
+import sys
 
+
+def singular(string):
+    if(string.endswith('s')):
+       return string[:-1]
+    else:
+        return string
+
+def titleTime(string):
+    string = string.title()
+    string = string.center(20, "=")
+    return string
 
 def findMean():
-    print(MEAN([1, 2, 3, 4, 5, 6, 7]))
+    print("The mean is", MEAN([1, 2, 3, 4, 5, 6, 7]))
 
 
 def ask_name():
@@ -92,7 +104,7 @@ def enter_move(board):
         for i in range(3):
             for j in range(3):
                 if(move == board[i][j]):
-                    grid[i][j] = 'O'
+                    # grid[i][j] = 'O'
                     return board
         print("That is not a free move")
         continue
@@ -104,12 +116,12 @@ def make_list_of_free_fields(board):
     # The function browses the board and builds a list of all the free squares;
     # the list consists of tuples, while each tuple is a pair of row and column numbers.
     print("Making list")
-    free_squares.clear()
-    for i in range(3):
-        for j in range(3):
-            if(board[i][j] != 'O' and board[i][j] != 'X'):
-                free_squares.append(tuple((i,j)))
-    return free_squares
+    # free_squares.clear()
+    # for i in range(3):
+        # for j in range(3):
+            # if(board[i][j] != 'O' and board[i][j] != 'X'):
+                    # free_squares.append(tuple((i,j)))
+    # return free_squares
 
 
 def victory_for(board, sign):
@@ -142,8 +154,8 @@ def draw_move(board):
         move = random.randrange(1,10)
         for i in range(3):
             for j in range(3):
-                if (move == board[i][j]):
-                    grid[i][j] = 'X'
+                # if (move == board[i][j]):
+                    # grid[i][j] = 'X'
                     return board
         continue
 
@@ -183,7 +195,11 @@ if __name__ == '__main__':
     #        display_board(grid)
     #        print('The computer has won.')
     #        break
-    findMean()
+    # findMean()
+    print(str(sys.argv))
+    print(singular(sys.argv[1]))
+    print(titleTime(" ".join(sys.argv[1:])))
+
 
 
 
