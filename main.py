@@ -15,3 +15,6 @@ if __name__ == '__main__':
 
     list = re.split('er$', os.getlogin())
     print(list)
+
+    # sorry if this is not fantastic first time using regex
+    # it was a friday afternoon when I started and I didn't know if you would respond so I decided to see how i could do
