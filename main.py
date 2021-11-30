@@ -1,20 +1,47 @@
-import os
-import platform
-import re
+class Bird:
+    species = 'bird'
+    beak_length = 3.2
 
-if __name__ == '__main__':
-    import random
 
-    print(platform.uname())
-    # os.uname is apparently only works on UNIX systems? I guess platform.uname acheives a similar affect
-    print(re.search('sys.+dows\'', str(platform.uname())))
+    def __init__(self,name):
+        self.name = name
 
-    if os.access("testfile.txt", os.R_OK):
-        file = open("testfile.txt", 'r')
-        print(re.findall('c[a-zA-z]+', file.read()))
 
-    list = re.split('er$', os.getlogin())
-    print(list)
+    def change_wingspan(self, wingspan):
+        self.wingspan = wingspan
 
-    # sorry if this is not fantastic first time using regex
-    # it was a friday afternoon when I started and I didn't know if you would respond so I decided to see how i could do
+    def get_wingspan(self):
+        print("{}".format(self.wingspan))
+
+
+    def chirp(self):
+        print("Caw Caw I'm a widdle birdie called {}".format(self.name))
+
+
+    def __str__(self):
+        return print("The {},".format(self.species), "{}".format(self.name), "has a wingspan of {}".format(self.wingspan), "cm")
+
+
+a = Bird('')
+b = Bird('')
+
+name1 = input("What would you like to name the first bird?")
+name2 = input("What would you like to name the second bird")
+
+a.name = name1
+b.name = name2
+
+try:
+    a.change_wingspan(float(input("What is the wingspan of the first bird?")))
+    b.change_wingspan(float(input("What is the wingspan of the second bird?")))
+except:
+    print("The wingspan you entered is not an number, a wingspan of 30cm has been applied")
+    wingspan1 = 30
+    wingspan2 = 30
+
+
+
+
+print(a.__str__())
+print(b.__str__())
+print(help(a))
